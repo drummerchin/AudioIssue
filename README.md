@@ -22,6 +22,10 @@ In PlayAndRecord category, the AVPlayer instance created after the initializing 
 To reproduce the isssue, we upload a demo to github: 
 https://github.com/drummerchin/AudioIssue.git
 
+<img src="doc/screenshot1.png" width=200/> 
+<img src="doc/screenshot2.jpg" width=200/> 
+<img src="doc/screenshot3.jpg" width=200/> 
+
 This demo have some buttons:
 
 - *EnterChatRoom* button, it represents entering the chat room, creating and using VPIO.
