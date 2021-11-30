@@ -18,6 +18,7 @@
 		DD073D872750940700504849 /* UIAlertController+PBActionSheetMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = DD073D852750940700504849 /* UIAlertController+PBActionSheetMenu.m */; };
 		DD073D97275096BD00504849 /* PBAudioSessionUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DD073D96275096BD00504849 /* PBAudioSessionUtils.m */; };
 		DD073D9B2750972A00504849 /* Synth.aif in Resources */ = {isa = PBXBuildFile; fileRef = DD073D9A2750972A00504849 /* Synth.aif */; };
+		DD7C7BEA2755C43C0016FC96 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DD7C7BE92755C43C0016FC96 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		DD073D95275096BD00504849 /* PBAudioSessionUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBAudioSessionUtils.h; sourceTree = "<group>"; };
 		DD073D96275096BD00504849 /* PBAudioSessionUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAudioSessionUtils.m; sourceTree = "<group>"; };
 		DD073D9A2750972A00504849 /* Synth.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Synth.aif; sourceTree = "<group>"; };
+		DD7C7BE92755C43C0016FC96 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		DD073D6527508C1800504849 /* AudioIssue */ = {
 			isa = PBXGroup;
 			children = (
+				DD7C7BE92755C43C0016FC96 /* README.md */,
 				DD073D992750972A00504849 /* Audio */,
 				DD073D812750940700504849 /* Helper */,
 				DD073D6627508C1800504849 /* AppDelegate.h */,
@@ -170,6 +173,7 @@
 			files = (
 				DD073D7627508C2100504849 /* LaunchScreen.storyboard in Resources */,
 				DD073D9B2750972A00504849 /* Synth.aif in Resources */,
+				DD7C7BEA2755C43C0016FC96 /* README.md in Resources */,
 				DD073D7327508C2100504849 /* Assets.xcassets in Resources */,
 				DD073D7127508C1800504849 /* Main.storyboard in Resources */,
 			);

@@ -74,6 +74,40 @@
         [UIAlertAction actionWithTitle:@"Sample Rate: 48000" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             PBAudioSessionSetPreferrences(48000, 0.005);
         }],
+        [UIAlertAction actionWithTitle:@"Category ..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            PB_STRONGIFY(vc)
+            if (!vc) return;
+            
+            UIAlertController *categoryMenu = [UIAlertController alertControllerWithTitle:@"Category" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+            NSArray<AVAudioSessionCategory> *categories = @[
+                AVAudioSessionCategoryAmbient,
+                AVAudioSessionCategorySoloAmbient,
+                AVAudioSessionCategoryPlayback,
+                AVAudioSessionCategoryRecord,
+                AVAudioSessionCategoryPlayAndRecord,
+                AVAudioSessionCategoryMultiRoute,
+            ];
+
+            AVAudioSessionCategory currentCategory = [AVAudioSession sharedInstance].category;
+            for (AVAudioSessionCategory category in categories)
+            {
+                NSString *title = category;
+                if ([category isEqualToString:currentCategory])
+                {
+                    //modeAction.enabled = NO;
+                    title = [NSString stringWithFormat:@"* %@", category];
+                }
+                UIAlertAction *categoryAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    NSError *error;
+                    [[AVAudioSession sharedInstance] setCategory:category error:&error];
+                }];
+                [categoryMenu addAction:categoryAction];
+            }
+            //*/
+            [categoryMenu addCancelActionWithTitle:@"Cancel"];
+            
+            [vc presentViewController:categoryMenu animated:YES completion:nil];
+        }],
         [UIAlertAction actionWithTitle:@"Mode ..." style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             PB_STRONGIFY(vc)
             if (!vc) return;
@@ -112,7 +146,7 @@
                     //modeAction.enabled = NO;
                     title = [NSString stringWithFormat:@"* %@",mode];
                 }
-                UIAlertAction *modeAction = [UIAlertAction actionWithTitle:mode style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                UIAlertAction *modeAction = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     NSError *error;
                     [[AVAudioSession sharedInstance] setMode:mode error:&error];
                 }];
