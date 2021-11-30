@@ -10,14 +10,15 @@ This demo is only used to reproduce apple's audio issue about VPIO and AVPlayer.
  
  These two business are both running in PlayAndRecord AudioSessionCategory and must run in PlayAndRecord. When entering chat room and then leaving chat room, then enter the video recording business, the BGM volume is very low (the sound is from speaker).
 
-We know the initializing of VPIO can cause mode to VoiceChatMode and the sound output to the headpiece, so after leaving chat room, we set AudioSessionCategory to playback and defalt mode, then entering video recording we set to PlayAndRecord.
+We know the initializing of VPIO can cause mode to VoiceChatMode and the sound output to the headpiece, so after leaving chat room, we set AudioSessionCategory to playback and default mode, then entering video recording we set to PlayAndRecord.
 
 We simplificate the issue:
 In PlayAndRecord category, the AVPlayer instance created after the initializing VPIO AudioUnit (even if VPIO was disposed), the volume is lower then the one created before initializing VPIO.
 
 ### Configuration
 
-- iOS 14 and iOS 15 can both reproduce the issue.
+- Device: iPhone
+- iOS version: iOS 14 and iOS 15 can both reproduce the issue.
 
 To reproduce the isssue, we upload a demo to github: 
 https://github.com/drummerchin/AudioIssue.git
